@@ -1,3 +1,10 @@
+# terraform {
+#   backend "s3" {
+#     bucket = "terraformtestbucket112"
+#     key = "terraform.tfstate"
+#     region = "us-east-1"
+#   }
+# }
 provider "aws" {
   region = var.region
 }
