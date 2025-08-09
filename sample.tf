@@ -30,9 +30,6 @@ resource "aws_security_group" "terra-sg1" {
     protocol = -1
     cidr_blocks = ["0.0.0.0/0" ]
   }
-  tags = {
-    Name = "terra-sg1"
-  }
 }
 variable "ami" {
   default = "ami-020cba7c55df1f615"
