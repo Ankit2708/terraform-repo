@@ -12,7 +12,7 @@ resource "aws_instance" "myterraformtest" {
   ami = var.ami
   instance_type = var.instance_type
   key_name = var.key_pair
-  vpc_security_group_ids  = [aws_security_group.terra-sg1.id, data.aws_security_group.mysg.id]
+  vpc_security_group_ids  = [aws_security_group.terra-sg1.id]
   tags = {
     Name = "instancefrontffile"
   }
