@@ -18,6 +18,7 @@ resource "aws_instance" "myterraformtest" {
   }
 }
 resource "aws_security_group" "terra-sg1" {
+  vpc_id = aws_vpc.myvpc.id
   ingress {
     from_port = 80
     to_port = 80
@@ -81,5 +82,5 @@ resource "aws_instance" "vpc1instance" {
   instance_type = var.instance_type
   key_name = var.key_pair
   subnet_id = aws_subnet.mysub-pub.id
-  vpc_security_group_ids  = [aws_security_group.terra-sg1.id, data.aws_security_group.mysg.id]
+  vpc_security_group_ids  = [aws_security_group.terra-sg1.id]
 }
