@@ -18,7 +18,6 @@ resource "aws_instance" "myterraformtest" {
   }
 }
 resource "aws_security_group" "terra-sg1" {
-  vpc_id = aws_vpc.myvpc.id
   ingress {
     from_port = 80
     to_port = 80
