@@ -2,7 +2,7 @@ resource "aws_vpc" "myvpc" {
   cidr_block = var.vpc_cidr
 }
 resource "aws_subnet" "mypub-sub" {
-  vpc_id     = [aws_vpc.myvpc.id]
+  vpc_id     = aws_vpc.myvpc.id
   cidr_block = var.vpc_pub_cidr
   map_public_ip_on_launch = true
   tags = {
@@ -10,14 +10,14 @@ resource "aws_subnet" "mypub-sub" {
   }
 }
 resource "aws_subnet" "mypri-sub" {
-  vpc_id = [aws_vpc.myvpc.id]
+  vpc_id = aws_vpc.myvpc.id
   cidr_block = var.vpc_pri_cidr
   tags = {
     Name = "pluto-pri-sub"
   }
 }
 resource "aws_internet_gateway" "myigw" {
-  vpc_id = [aws_vpc.myvpc.id]
+  vpc_id = aws_vpc.myvpc.id
   tags = {
     Name = "myigw1"
   }
