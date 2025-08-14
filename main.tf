@@ -10,9 +10,22 @@ provider "aws" {
 }
 module "myinstance" {
   source = "./instance"
+  instance_type = var.instance_type
+  ami = var.ami
+  key_pair = var.key_pair
+  region = var.region
+  vpc_security_group_ids = var.vpc_security_group_ids
 }
 module "myvpc" {
   source = "./vpc"
+  vpc_cidr = var.vpc_cidr
+  vpc_pub_cidr = var.vpc_pub_cidr
+  vpc_pri_cidr = var.vpc_pri_cidr
+  vpc_security_group_ids = var.vpc_security_group_ids
+  ami = var.ami
+  instance_type = var.instance_type
+  key_pair = var.key_pair
+  region = var.region
 }
 # resource "aws_instance" "myterraformtest" {
 #   ami = var.ami
