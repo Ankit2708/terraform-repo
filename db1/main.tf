@@ -6,7 +6,7 @@ resource "aws_db_instance" "mydb" {
   allocated_storage = 10
   engine = "mysql"
   engine_version = "8.0"
-  db_name = mydb123
+  db_name = "mydb123"
   manage_master_user_password = false
   username = "admin"
   password = "admin123"
