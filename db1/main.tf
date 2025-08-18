@@ -7,7 +7,7 @@ resource "aws_db_instance" "mydb" {
   engine = "mysql"
   engine_version = "8.0"
   db_name = "mydb123"
-  manage_master_user_password = false
+  manage_master_user_password = true
   username = "admin"
   password = "admin123"
   vpc_security_group_ids = ["sg-0b26b728e195aa341"]
