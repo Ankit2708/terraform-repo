@@ -12,4 +12,5 @@ resource "aws_db_instance" "mydb" {
   vpc_security_group_ids = ["sg-0b26b728e195aa341"]
   publicly_accessible = false
   parameter_group_name = "default.mysql8.0"
+  skip_final_snapshot = true
 }
